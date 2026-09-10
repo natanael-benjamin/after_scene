@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>AfterScene | Catálogo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="imagens/logo.jpeg" alt="Logo">
+                <span>After<span>Scene</span>
+            </span>
+        </a>
+        <nav class="nav">
+            <a href="index.html">Início</a>
+            <a class="active" href="catalogo.html">Catálogo</a>
+            <a href="listas.html">Minhas listas</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="assinatura.html">Assinatura</a>
+        </nav>
+    </header>
+    <main>
+        <section class="section" id="busca">
+            <div class="section-head">
+                <div>
+                    <span class="kicker">PESQUISA</span>
+                    <h1>Catálogo de filmes e séries</h1>
+                    <p class="muted">Pesquise por título e selecione gênero, ano e nota.</p>
+                </div>
+            </div>
+            <form class="filters" action="#resultados" method="get">
+                <div class="field">
+                    <label for="q">Buscar título</label>
+                    <input id="q" name="q" type="search" placeholder="Ex.: Horizonte">
+                </div>
+                <div class="field">
+                    <label for="genero">Gênero</label>
+                    <select id="genero" name="genero">
+                        <option>Todos</option>
+                        <option>Aventura</option>
+                        <option>Drama</option>
+                        <option>Família</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="ano">Ano</label>
+                    <select id="ano" name="ano">
+                        <option>Todos</option>
+                        <option>2026</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="nota">Nota mínima</label>
+                    <select id="nota" name="nota">
+                        <option>Qualquer nota</option>
+                        <option>4,0+</option>
+                        <option>4,5+</option>
+                        <option>4,8+</option>
+                    </select></div>
+                    <button class="btn primary" type="submit">Buscar</button>
+                </form>
+                <div id="resultados" class="grid">
+                    <article class="card">
+                        <img class="poster" src="assets/friends.jpeg" alt="Friends">
+                        <div class="card-body">
+                            <span class="tag">Série • Sitcom</span>
+                            <h3>Friends</h3>
+                            <p class="muted">1994 • 10 temporadas</p>
+                            <p class="rating">★★★★★ 4,9</p>
+                            <div class="card-actions">
+                            <a class="btn small" href="listas.html">＋ Lista</a>
+                            <a class="btn small" href="reviews.html">Review</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img class="poster" src="assets/gente grande.jpeg" alt="Gente Grande">
+                    <div class="card-body">
+                        <span class="tag">Filme • Comédia/Drama</span>
+                        <h3>Gente Grande</h3>
+                        <p class="muted">2010 • 1h 42min</p>
+                        <p class="rating">★★★★☆ 4,7</p>
+                        <div class="card-actions">
+                            <a class="btn small" href="listas.html">＋ Lista</a>
+                            <a class="btn small" href="reviews.html">Review</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img class="poster" src="imagens/estranho.jpeg" alt="odisseia">
+                    <div class="card-body">
+                        <span class="tag">Série • Terror</span>
+                        <h3>Stranger Things</h3>
+                        <p class="muted">2016 • 5 temporadas</p>
+                        <p class="rating">★★★★★ 4,8</p>
+                        <div class="card-actions">
+                            <a class="btn small" href="listas.html">＋ Lista</a>
+                            <a class="btn small" href="reviews.html">Review</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img class="poster" src="assets/how i met.jpeg" alt="How I Met Your Mother">
+                    <div class="card-body">
+                        <span class="tag">Série • Sitcom</span>
+                        <h3>How I Met Your Mother</h3>
+                        <p class="muted">2005 • 9 temporadas</p>
+                        <p class="rating">★★★★☆ 4,5</p>
+                        <div class="card-actions">
+                            <a class="btn small" href="listas.html">＋ Lista</a>
+                            <a class="btn small" href="reviews.html">Review</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img class="poster" src="imagens/arcane.jpeg" alt="American Horror Story">
+                    <div class="card-body">
+                        <span class="tag">Série • Ação</spa>
+                            <h3>Arcane</h3>
+                            <p class="muted">2021 • 2 temporadas</p>
+                            <p class="rating">★★★★☆ 4,6</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="poster" src="assets/homem aranha.jpeg" alt="Homem Aranha">
+                        <div class="card-body">
+                            <span class="tag">Filme • Ação/Aventura</span>
+                            <h3>Homem Aranha: Um Novo Dia</h3>
+                            <p class="muted">2026 • 2h 25min</p>
+                            <p class="rating">★★★★☆ 4,4</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="poster" src="assets/o convite.jpeg" alt="O convite">
+                        <div class="card-body">
+                            <span class="tag">Filme • Comédia</span>
+                            <h3>O Convite</h3>
+                            <p class="muted">2026 • 1h 47min</p>
+                            <p class="rating">★★★★☆ 3,3</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="poster" src="assets/obsessão.jpeg" alt="Obsessão">
+                        <div class="card-body">
+                            <span class="tag">Filme • Terror</span>
+                            <h3>Obsessão</h3>
+                            <p class="muted">2026 • 1h 49min</p>
+                            <p class="rating">★★★★☆ 4,2</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="poster" src="assets/detona.jpg" alt="Detona Ralph">
+                        <div class="card-body">
+                            <span class="tag">Filme • Infantil/Comédia</span>
+                            <h3>Detona Ralph</h3>
+                            <p class="muted">2012 • 1h 41min</p>
+                            <p class="rating">★★★★☆ 3,9</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="poster" src="assets/dois.jfif" alt="Dois Irmãos e uma Jornada Fantástica">
+                        <div class="card-body">
+                            <span class="tag">Filme • Infantil/Fantasia</span>
+                            <h3>Dois Irmãos e uma Jornada Fantástica</h3>
+                            <p class="muted">2020 • 1h 42min</p>
+                            <p class="rating">★★★★☆ 2,8</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="poster" src="assets/esqueceram.jfif" alt="Esqueceram De Mim">
+                        <div class="card-body">
+                            <span class="tag">Filme • Infantil/Comédia</span>
+                            <h3>Esquecerem De Mim</h3>
+                            <p class="muted">1990 • 1h 43min</p>
+                            <p class="rating">★★★★☆ 4,3</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img class="poster" src="assets/drama.jpeg" alt="O Drama">
+                        <div class="card-body">
+                            <span class="tag">Filme • Romance</span>
+                            <h3>O Drama</h3>
+                            <p class="muted">2026 • 1h 45min</p>
+                            <p class="rating">★★★★☆ 2,1</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-brand">After<span>Scene</span>
+            </div>
+            <p>Catálogo • Busca por gênero, ano e nota</p>
+        </footer>
+    </body>
+    </html>
