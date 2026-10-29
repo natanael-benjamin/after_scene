@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>AfterScene | Cadastro</title><link rel="stylesheet" href="style.css">
+    </head>
+    <body class="login">
+        <main class="login-card">
+            <img class="login-logo" src="imagens/logo.jpeg" alt="Logo AfterScene">
+            <span class="kicker">PLATAFORMA DE ENTRETENIMENTO</span>
+            <h1>Criar conta no AfterScene</h1>
+        <p class="sub">Cadastre-se para acessar seu perfil, suas listas e avaliacoes.</p>
+        <form id="formCadastro">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" placeholder="Seu nome" required>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="seuemail@exemplo.com" required>
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" placeholder="Mínimo 6 caracteres" minlength="6" required>
+            <p id="erroCadastro" style="color:#ff6b6b;font-size:13px;margin-top:10px;display:none"></p>
+            <button class="btn primary" type="submit">Cadastrar</button>
+        </form>
+        <button id="btnGoogle" class="btn" style="width:100%;margin-top:12px">Cadastrar com Google</button>
+        <p class="note">Já tem conta? <a href="login.html" style="color:#45c6d9">Entrar</a><br>
+        Projeto academico . TCC AfterScene</p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById("formCadastro").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+            const erroEl = document.getElementById("erroCadastro");
+            erroEl.style.display = "none";
+
+            const resultado = await cadastrarUsuario(nome, email, senha);
+            if (resultado.sucesso) {
+                window.location.href = "index.html";
+            } else {
+                erroEl.textContent = resultado.mensagem;
+                erroEl.style.display = "block";
+            }
+        });
+
+        document.getElementById("btnGoogle").addEventListener("click", () => {
+            logarComGoogle();
+        });
+    </script>
+</body>
+</html>

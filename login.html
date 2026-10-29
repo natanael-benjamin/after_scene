@@ -10,14 +10,42 @@
             <span class="kicker">PLATAFORMA DE ENTRETENIMENTO</span>
             <h1>Entrar no AfterScene</h1>
         <p class="sub">Acesse seu perfil, suas listas, avaliacoes e o catalogo.</p>
-        <form action="index.html" method="get">
+        <form id="formLogin">
             <label for="email">E-mail</label>
             <input id="email" type="email" placeholder="seuemail@exemplo.com" required>
             <label for="senha">Senha</label>
             <input id="senha" type="password" placeholder="Digite sua senha" required>
+            <p id="erroLogin" style="color:#ff6b6b;font-size:13px;margin-top:10px;display:none"></p>
             <button class="btn primary" type="submit">Entrar</button>
         </form>
-        <p class="note">Projeto academico . TCC AfterScene<br>Esta e uma tela demonstrativa feita apenas com HTML e CSS.</p>
+        <button id="btnGoogle" class="btn" style="width:100%;margin-top:12px">Entrar com Google</button>
+        <p class="note">Ainda não tem conta? <a href="cadastro.html" style="color:#45c6d9">Cadastre-se</a><br>
+        Projeto academico . TCC AfterScene</p>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById("formLogin").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+            const erroEl = document.getElementById("erroLogin");
+            erroEl.style.display = "none";
+
+            const resultado = await logarUsuario(email, senha);
+            if (resultado.sucesso) {
+                window.location.href = "index.html";
+            } else {
+                erroEl.textContent = resultado.mensagem;
+                erroEl.style.display = "block";
+            }
+        });
+
+        document.getElementById("btnGoogle").addEventListener("click", () => {
+            logarComGoogle();
+        });
+    </script>
 </body>
 </html>

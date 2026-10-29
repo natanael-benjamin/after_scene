@@ -29,21 +29,23 @@
         <h1>Meu perfil</h1>
         <div class="profile-grid">
             <article class="panel profile-card">
-                <div class="big-avatar">U</div>
-                <h2>Usuário AfterScene</h2>
+                <div class="big-avatar" id="bigAvatar">U</div>
+                <h2 id="perfilNome">Usuário AfterScene</h2>
                 <p class="muted">Membro desde 2026</p>
             <br>
                 <a class="btn small" href="assinatura.html">Gerenciar assinatura</a>
+                <br><br>
+                <button id="btnLogout" class="btn" style="width:100%">Sair</button>
             </article>
             <article class="panel">
                 <h2>Informações da conta</h2>
                 <div class="field">
                     <label>Nome</label>
-                    <input value="Usuário AfterScene" readonly>
+                    <input id="nomeInput" value="Usuário AfterScene" readonly>
                 </div>
                 <div class="field">
                     <label>E-mail</label>
-                    <input value="usuario@afterscene.com" readonly>
+                    <input id="emailInput" value="usuario@afterscene.com" readonly>
                 </div>
                 <div class="field">
                     <label>Preferências</label>
@@ -65,5 +67,25 @@
         <span>Scene</span>
     </div><p>Perfil do usuário</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/auth.js"></script>
+<script>
+    (async () => {
+        const user = await usuarioAtual();
+        if (!user) {
+            window.location.href = "login.html";
+            return;
+        }
+        const nome = user.user_metadata?.full_name || user.email;
+        document.getElementById("perfilNome").textContent = nome;
+        document.getElementById("bigAvatar").textContent = nome.charAt(0).toUpperCase();
+        document.getElementById("nomeInput").value = nome;
+        document.getElementById("emailInput").value = user.email;
+        atualizarHeaderUsuario();
+    })();
+
+    document.getElementById("btnLogout").addEventListener("click", deslogarUsuario);
+</script>
 </body>
 </html>
